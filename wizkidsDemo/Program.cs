@@ -8,18 +8,23 @@ namespace wizkidsDemo
 {
     class Program
     {
+        #region Main
+        /// <summary>
+        /// Main
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             //Task 1 : palindrome strings
             Console.WriteLine("Task1: Enter palindrome string : ");
             bool isPalindrome = palindrome(Console.ReadLine());
             Console.WriteLine(isPalindrome);
-            Console.WriteLine("Press a button task 2");
+            Console.WriteLine("Press a button for task 2");
             Console.ReadKey();
             Console.WriteLine("----------------------------------");
             Console.WriteLine("Task2: FooBar");
             fooBar();
-            Console.WriteLine("Press a button task 2");
+            Console.WriteLine("Press a button for task 3");
             Console.ReadKey();
             Console.WriteLine("----------------------------------");
             Console.WriteLine("Task3: Email Replacer");
@@ -27,12 +32,16 @@ namespace wizkidsDemo
             string replacer = Console.ReadLine();
             string text = emailReplacer("Christian has the email address christian+123@gmail.com.Christian's friend, John Cave-Brown, has the email address john.cave-brown@gmail.com.John's daughter Kira studies at Oxford University and has the email adress Kira123@oxford.co.uk.Her Twitter handle is @kira.cavebrown.",replacer);
             Console.WriteLine(text);
-            Console.WriteLine("Press a button task 2");
             Console.ReadKey();
             Console.WriteLine("----------------------------------");
         }
-
-
+        #endregion
+        #region Palindrome Strings
+        /// <summary>
+        /// Palindrome Strings Method
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public static bool palindrome(string s)
         {
             bool isPalindrome = true;
@@ -46,7 +55,11 @@ namespace wizkidsDemo
             }
             return isPalindrome;
         }
-
+        #endregion
+        #region fooBar
+        /// <summary>
+        /// FooBar Method
+        /// </summary>
         public static void fooBar()
         {
             for (int i = 1; i < 100; i++)
@@ -69,6 +82,14 @@ namespace wizkidsDemo
                 }
             }
         }
+        #endregion
+        #region Email Replacer
+        /// <summary>
+        /// Email Replacer
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="replace"></param>
+        /// <returns></returns>
         public static string emailReplacer(string text, string replace)
         {
             string[] words = text.Split(' ');
@@ -91,5 +112,6 @@ namespace wizkidsDemo
             }
             return text;
         }
+        #endregion
     }
 }
